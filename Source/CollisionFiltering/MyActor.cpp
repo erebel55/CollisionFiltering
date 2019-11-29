@@ -19,6 +19,16 @@ void AMyActor::PostInitializeComponents() {
 
 	Mesh->SetMaskFilterOnBodyInstance((uint8)MaskFilter);
 	Mesh->SetMoveIgnoreMask((uint8)MaskFilter);
+
+
+	//Go through body setups and see which bodies should be turned on and off
+	for (int32 BodyIdx = 0; BodyIdx < Mesh->Bodies.Num(); ++BodyIdx)
+	{
+		if (FBodyInstance* BodyInst = Mesh->Bodies[BodyIdx])
+		{
+			BodyInst->SetMaskFilter((uint8)MaskFilter);
+		}
+	}
 }
 
 void AMyActor::PerformTrace(FVector StartTrace, FVector EndTrace, EMaskFilterChannels Filter) {
