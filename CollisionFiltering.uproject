@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{62785FC7-46E3-6A99-B6D5-75B02CC3FC6F}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "CollisionFiltering",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
